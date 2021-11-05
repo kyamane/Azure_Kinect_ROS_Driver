@@ -24,6 +24,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(angles REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(tf2 REQUIRED)
@@ -48,6 +49,7 @@ add_executable(${PROJECT_NAME}_node
 ament_target_dependencies(${PROJECT_NAME}_node rclcpp 
   std_msgs 
   sensor_msgs
+  angles
   visualization_msgs
   image_transport
   tf2
@@ -112,9 +114,9 @@ target_link_libraries(${PROJECT_NAME}_node
 
 ## Mark executables and/or libraries for installation
 install(TARGETS ${PROJECT_NAME}_node
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
+  #ARCHIVE DESTINATION lib
+  #LIBRARY DESTINATION lib
+  #RUNTIME DESTINATION bin
   DESTINATION lib/${PROJECT_NAME}
 )
 
